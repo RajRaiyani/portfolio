@@ -89,7 +89,7 @@ function Hero() {
           </div>
         </div>
       </div>
-      <div className="w-2/3 hidden md:flex items-center justify-center">
+      <div className="w-2/3 flex items-center justify-center">
         <img
           src={PosterImg}
           data-aos="zoom-in"
