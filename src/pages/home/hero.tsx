@@ -8,19 +8,13 @@ function Hero() {
     <section className="my-4 flex flex-col md:flex-row gap-4 py-36 md:py-10">
       <div className="p-7 w-full flex flex-col gap-5 justify-center">
         <div className="space-y-4">
-          <h1
-            data-aos="fade-right"
-            className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl"
-          >
+          <h1 className="text-3xl font-extrabold leading-tight tracking-tighter sm:text-3xl md:text-5xl lg:text-6xl">
             Hi, I'm Raj Raiyani
             <br className="" />
             Student Of Computer Science
           </h1>
 
-          <p
-            data-aos="fade-right"
-            className="text-lg text-muted-foreground sm:text-xl"
-          >
+          <p className="text-lg text-muted-foreground sm:text-xl">
             creator of&nbsp;
             <a
               href="https://simplepg.com/"
@@ -44,14 +38,13 @@ function Hero() {
 
         <div className="flex gap-4 flex-wrap">
           <a href={ResumeLink} download="RP_resume">
-            <Button className="group" data-aos="flip-up">
+            <Button className="group">
               <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
               Download Resume
             </Button>
           </a>
           <div className="flex gap-4">
             <Button
-              data-aos="fade-up"
               size="icon"
               variant="outline"
               onClick={() => {
@@ -62,7 +55,6 @@ function Hero() {
               <span className="sr-only">GitHub</span>
             </Button>
             <Button
-              data-aos="fade-up-left"
               size="icon"
               variant="outline"
               onClick={() => {
@@ -76,7 +68,6 @@ function Hero() {
               <span className="sr-only">LinkedIn</span>
             </Button>
             <Button
-              data-aos="fade-left"
               size="icon"
               variant="outline"
               onClick={() => {
@@ -92,7 +83,6 @@ function Hero() {
       <div className="w-full md:w-2/3  flex items-center justify-center">
         <img
           src={PosterImg}
-          data-aos="zoom-in"
           alt="Developer portrait"
           className="w-96 grayscale"
         />

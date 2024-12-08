@@ -43,17 +43,13 @@ const projects = [
 export default function Projects() {
   return (
     <section className="py-10">
-      <h2
-        className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl"
-        data-aos="fade-up"
-      >
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
         Projects
       </h2>
 
       <div className="grid mt-7 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {projects.map((project) => (
           <Card
-            data-aos="flip-right"
             key={project.title}
             className="flex flex-col overflow-hidden transition-all hover:shadow-lg"
           >
@@ -67,10 +63,8 @@ export default function Projects() {
               </div>
             </CardHeader>
             <CardContent className="flex-grow p-6">
-              <CardTitle data-aos="fade-left" className="mb-2 text-2xl">
-                {project.title}
-              </CardTitle>
-              <CardDescription className="mb-4" data-aos="fade-up">
+              <CardTitle className="mb-2 text-2xl">{project.title}</CardTitle>
+              <CardDescription className="mb-4">
                 {project.description}
               </CardDescription>
               <div className="">
@@ -79,7 +73,7 @@ export default function Projects() {
                 </h4>
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech) => (
-                    <Badge data-aos="fade-left" key={tech} variant="secondary">
+                    <Badge key={tech} variant="secondary">
                       {tech}
                     </Badge>
                   ))}

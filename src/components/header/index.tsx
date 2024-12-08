@@ -25,10 +25,7 @@ function Header() {
   const { setTheme } = useTheme();
   const navigate = useNavigate();
   return (
-    <header
-      data-aos="fade-down"
-      className="border shadow p-2 px-2 rounded-xl flex justify-between items-center"
-    >
+    <header className="border shadow p-2 px-2 rounded-xl flex justify-between items-center">
       <div className="flex gap-2 p-1 px-2 hover:bg-secondary rounded-lg items-center text-xl cursor-pointer">
         <ChartNoAxesGantt /> <p className="">RP Raiyani</p>
       </div>

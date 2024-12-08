@@ -6,14 +6,14 @@ function Footer() {
   return (
     <footer className="border rounded-xl shadow p-7">
       <div className="grid gap-8 sm:grid-cols-3">
-        <div data-aos="fade-left" data-aos-offset="100" className="space-y-4">
+        <div className="space-y-4">
           <h3 className="text-lg font-semibold">About</h3>
           <p className="text-sm text-muted-foreground">
             Full Stack Developer passionate about building clean, efficient, and
             user-friendly web applications.
           </p>
         </div>
-        <div data-aos="fade-left" data-aos-offset="100" className="space-y-4">
+        <div className="space-y-4">
           <h3 className="text-lg font-semibold">Quick Links</h3>
           <nav className="flex flex-col space-y-2 text-sm">
             <Link to="/" className="hover:underline">
@@ -31,7 +31,7 @@ function Footer() {
           </nav>
         </div>
 
-        <div data-aos="fade-left" data-aos-offset="100" className="space-y-4">
+        <div className="space-y-4">
           <h3 className="text-lg font-semibold">Connect</h3>
           <div className="flex space-x-4">
             <Link to="https://github.com" className="hover:text-primary">

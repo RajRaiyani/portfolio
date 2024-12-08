@@ -4,19 +4,8 @@ import HomePage from "@/pages/home";
 import ContactPage from "@/pages/contact";
 import ProjectPage from "@/pages/projects";
 import "aos/dist/aos.css";
-import AOS from "aos";
-import { useEffect } from "react";
 
 function App() {
-  useEffect(() => {
-    AOS.init({
-      offset: 300,
-      disable: "phone",
-      duration: 700,
-      easing: "ease-out-cubic",
-    });
-  }, []);
-
   return (
     <>
       <Routes>

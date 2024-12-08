@@ -79,19 +79,12 @@ const skills = [
 export default function Skills() {
   return (
     <section id="skills" className="w-full py-14">
-      <h2
-        data-aos="fade-up"
-        className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center"
-      >
+      <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center">
         Skills & Technologies
       </h2>
       <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
         {skills.map((skill) => (
-          <Card
-            key={skill.category}
-            data-aos="fade-up"
-            className="overflow-hidden"
-          >
+          <Card key={skill.category} className="overflow-hidden">
             <CardHeader className="pb-4">
               <CardTitle className="text-lg flex gap-2 items-center">
                 <skill.icon className="w-5 h-5" /> {skill.category}
@@ -101,7 +94,6 @@ export default function Skills() {
               <div className="flex flex-wrap gap-2">
                 {skill.technologies.map((tech) => (
                   <Badge
-                    data-aos="fade-left"
                     key={tech.name}
                     variant="secondary"
                     className="flex items-center gap-2 px-2 py-1"
