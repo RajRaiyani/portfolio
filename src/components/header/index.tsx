@@ -1,5 +1,5 @@
 import { ChartNoAxesGantt } from "lucide-react";
-import { Link } from "react-router-dom";
+
 import { Moon, Sun } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/contexts/theme-provider";
@@ -19,9 +19,11 @@ import {
 } from "@/components/ui/navigation-menu";
 
 import NavBar from "./navbar";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const { setTheme } = useTheme();
+  const navigate = useNavigate();
   return (
     <header
       data-aos="fade-down"
@@ -35,25 +37,28 @@ function Header() {
         <NavigationMenu className="">
           <NavigationMenuList>
             <NavigationMenuItem>
-              <Link to="/">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Home
-                </NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink
+                onClick={() => navigate("/")}
+                className={navigationMenuTriggerStyle()}
+              >
+                Home
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="projects">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Projects
-                </NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink
+                onClick={() => navigate("/projects")}
+                className={navigationMenuTriggerStyle()}
+              >
+                Projects
+              </NavigationMenuLink>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link to="/contact">
-                <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                  Contact
-                </NavigationMenuLink>
-              </Link>
+              <NavigationMenuLink
+                onClick={() => navigate("/contact")}
+                className={navigationMenuTriggerStyle()}
+              >
+                Contact
+              </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>

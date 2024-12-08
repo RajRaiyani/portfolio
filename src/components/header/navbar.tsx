@@ -9,7 +9,7 @@ import { Moon, Sun } from "lucide-react";
 import { useTheme } from "@/contexts/theme-provider";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -27,13 +27,12 @@ import {
 
 function Navbar() {
   const { setTheme } = useTheme();
+  const navigate = useNavigate();
   return (
     <Sheet>
       <SheetTrigger className="md:hidden">
-        <Button variant="outline" size="icon">
-          <Menu className="h-5 w-5" />
-          <span className="sr-only">Toggle theme</span>
-        </Button>
+        <Menu className="h-5 w-5" />
+        <span className="sr-only">Toggle theme</span>
       </SheetTrigger>
       <SheetContent className="w-60">
         <SheetHeader>
@@ -44,25 +43,28 @@ function Navbar() {
           <NavigationMenu className="">
             <NavigationMenuList className="flex flex-col gap-4">
               <NavigationMenuItem>
-                <Link to="/">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Home
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink
+                  onClick={() => navigate("/")}
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Home
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/projects">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Projects
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink
+                  onClick={() => navigate("/projects")}
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Projects
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link to="/contact">
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Contact
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink
+                  onClick={() => navigate("/contact")}
+                  className={navigationMenuTriggerStyle()}
+                >
+                  Contact
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
