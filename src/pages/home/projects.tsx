@@ -1,0 +1,115 @@
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { ExternalLinkIcon } from "lucide-react";
+import SimplePgImg from "@/assets/images/projects/simplepg.png";
+import DisuntImg from "@/assets/images/projects/disunt.webp";
+import AkhilamImg from "@/assets/images/projects/akhilam.webp";
+import { CircleArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const projects = [
+  {
+    title: "Simple PG",
+    description:
+      "Paying guest management system built with React, Node.js, and PostgreSQL. Features include user authentication, booking management, and payment processing.",
+    image: SimplePgImg,
+    technologies: ["React", "Node.js", "Postgres", "ShadCn UI"],
+    demoLink: "https://simplepg.com/",
+  },
+  {
+    title: "Disunt",
+    description:
+      "Portfolio website for a Disunt industries built with PHP, HTML, CSS, and JavaScript. Features a custom CMS for managing content.",
+    image: DisuntImg,
+    technologies: ["PHP", "HTML", "JavaScript", "CSS"],
+    demoLink: "https://disuntindustries.com/",
+  },
+  {
+    title: "Akhilam interior",
+    description:
+      "website of an architecture firm build with PHP, HTML, CSS, and Bootstrap. Features a custom CMS for managing content.",
+    image: AkhilamImg,
+    technologies: ["PHP", "HTML", "CSS", "Bootstrap"],
+    demoLink: "https://akhilaminterio.com/",
+  },
+];
+
+export default function Projects() {
+  return (
+    <section id="projects" className="py-14">
+      <h2
+        className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-center"
+        data-aos="fade-up"
+      >
+        Featured Projects
+      </h2>
+      <div className="flex justify-end p-4">
+        <Link to="/projects" className="font-bold flex items-center gap-2">
+          View all projects <CircleArrowRight className="h-5 w-5" />
+        </Link>
+      </div>
+      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {projects.map((project) => (
+          <Card
+            data-aos="flip-right"
+            key={project.title}
+            className="flex flex-col overflow-hidden transition-all hover:shadow-lg"
+          >
+            <CardHeader className="p-0">
+              <div className="relative aspect-video overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover transition-all hover:scale-105"
+                />
+              </div>
+            </CardHeader>
+            <CardContent className="flex-grow p-6">
+              <CardTitle data-aos="fade-left" className="mb-2 text-2xl">
+                {project.title}
+              </CardTitle>
+              <CardDescription className="mb-4" data-aos="fade-up">
+                {project.description}
+              </CardDescription>
+              <div className="">
+                <h4 className="text-sm font-semibold mb-2">
+                  Technologies Used:
+                </h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech) => (
+                    <Badge data-aos="fade-left" key={tech} variant="secondary">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+            <CardFooter className="">
+              <div className="flex justify-between w-full">
+                <Button asChild variant="outline" size="sm">
+                  <a
+                    href={project.demoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center"
+                  >
+                    <ExternalLinkIcon className="mr-2 h-4 w-4" />
+                    Live Demo
+                  </a>
+                </Button>
+              </div>
+            </CardFooter>
+          </Card>
+        ))}
+      </div>
+    </section>
+  );
+}
