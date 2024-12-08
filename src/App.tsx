@@ -2,6 +2,7 @@ import RootLayout from "@/layouts/root";
 import { Route, Routes } from "react-router-dom";
 import HomePage from "@/pages/home";
 import ContactPage from "@/pages/contact";
+import ProjectPage from "@/pages/projects";
 import "aos/dist/aos.css";
 import AOS from "aos";
 import { useEffect } from "react";
@@ -22,6 +23,7 @@ function App() {
         <Route element={<RootLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/projects" element={<ProjectPage />} />
         </Route>
       </Routes>
     </>
