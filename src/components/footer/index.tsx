@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Github, Linkedin, Mail, Twitter } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import Constants from "@/config/constant";
 
 function Footer() {
   return (
@@ -34,20 +35,20 @@ function Footer() {
         <div className="space-y-4">
           <h3 className="text-lg font-semibold">Connect</h3>
           <div className="flex space-x-4">
-            <Link to="https://github.com" className="hover:text-primary">
+            <Link to={Constants.github} className="hover:text-primary">
               <Github className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </Link>
-            <Link to="https://linkedin.com" className="hover:text-primary">
+            <Link to={Constants.linkedin} className="hover:text-primary">
               <Linkedin className="h-5 w-5" />
               <span className="sr-only">LinkedIn</span>
             </Link>
-            <Link to="https://twitter.com" className="hover:text-primary">
+            <Link to={Constants.twitter} className="hover:text-primary">
               <Twitter className="h-5 w-5" />
               <span className="sr-only">Twitter</span>
             </Link>
             <Link
-              to="mailto:contact@example.com"
+              to={"mailto:" + Constants.email}
               className="hover:text-primary"
             >
               <Mail className="h-5 w-5" />

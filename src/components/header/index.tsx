@@ -26,7 +26,10 @@ function Header() {
   const navigate = useNavigate();
   return (
     <header className="border shadow p-2 px-2 rounded-xl flex justify-between items-center">
-      <div className="flex gap-2 p-1 px-2 hover:bg-secondary rounded-lg items-center text-xl cursor-pointer">
+      <div
+        className="flex gap-2 p-1 px-2 hover:bg-secondary rounded-lg items-center text-xl cursor-pointer"
+        onClick={() => navigate("/")}
+      >
         <ChartNoAxesGantt /> <p className="">RP Raiyani</p>
       </div>
 

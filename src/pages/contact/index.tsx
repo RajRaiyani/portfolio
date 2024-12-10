@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import Constant from "@/config/constant";
 
 export default function ContactPage() {
   const [isLoading, setIsLoading] = useState(false);
@@ -40,14 +41,14 @@ export default function ContactPage() {
             <h2 className="text-xl font-semibold">Connect with me</h2>
             <div className="flex gap-4">
               <a
-                href="mailto:contact@example.com"
+                href={"mailto:" + Constant.email}
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
               >
                 <Mail className="h-5 w-5" />
                 <span className="sr-only">Email</span>
               </a>
               <a
-                href="https://github.com"
+                href={Constant.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"
@@ -56,7 +57,7 @@ export default function ContactPage() {
                 <span className="sr-only">GitHub</span>
               </a>
               <a
-                href="https://linkedin.com"
+                href={Constant.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 hover:bg-primary/20 transition-colors"

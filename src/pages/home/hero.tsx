@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Download, Github, Linkedin, Twitter } from "lucide-react";
 import PosterImg from "@/assets/images/poster.webp";
 import ResumeLink from "@/assets/docs/resume.pdf";
+import Constant from "@/config/constant";
 
 function Hero() {
   return (
@@ -48,7 +49,7 @@ function Hero() {
               size="icon"
               variant="outline"
               onClick={() => {
-                window.open("https://github.com/RajRaiyani", "_blank");
+                window.open(Constant.github, "_blank");
               }}
             >
               <Github className="w-4 h-4" />
@@ -58,10 +59,7 @@ function Hero() {
               size="icon"
               variant="outline"
               onClick={() => {
-                window.open(
-                  "https://www.linkedin.com/in/rp-raiyani/",
-                  "_blank"
-                );
+                window.open(Constant.linkedin, "_blank");
               }}
             >
               <Linkedin className="w-4 h-4" />
@@ -71,7 +69,7 @@ function Hero() {
               size="icon"
               variant="outline"
               onClick={() => {
-                window.open("https://x.com/RPRaiyani", "_blank");
+                window.open(Constant.twitter, "_blank");
               }}
             >
               <Twitter className="w-4 h-4" />

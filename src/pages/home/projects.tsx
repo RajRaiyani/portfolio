@@ -6,14 +6,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { CircleArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLinkIcon } from "lucide-react";
+
 import SimplePgImg from "@/assets/images/projects/simplepg.png";
 import DisuntImg from "@/assets/images/projects/disunt.webp";
 import AkhilamImg from "@/assets/images/projects/akhilam.webp";
-import { CircleArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const projects = [
   {

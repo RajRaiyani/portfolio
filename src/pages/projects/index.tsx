@@ -12,6 +12,7 @@ import { ExternalLinkIcon } from "lucide-react";
 import SimplePgImg from "@/assets/images/projects/simplepg.png";
 import DisuntImg from "@/assets/images/projects/disunt.webp";
 import AkhilamImg from "@/assets/images/projects/akhilam.webp";
+import PlexusImg from "@/assets/images/projects/plexus.png";
 
 const projects = [
   {
@@ -37,6 +38,14 @@ const projects = [
     image: AkhilamImg,
     technologies: ["PHP", "HTML", "CSS", "Bootstrap"],
     demoLink: "https://akhilaminterio.com/",
+  },
+  {
+    title: "Plexus",
+    description:
+      "website of an implant company build with PHP, HTML, CSS, and Bootstrap. Features a custom CMS for managing content.",
+    image: PlexusImg,
+    technologies: ["PHP", "HTML", "CSS", "Bootstrap"],
+    demoLink: "https://plexusorthotech.com/",
   },
 ];
 
