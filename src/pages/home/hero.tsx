@@ -80,7 +80,7 @@ function Hero() {
       </div>
       <div className="w-full md:w-2/3  flex items-center justify-center">
         <img
-          src={PosterImg}
+          src="/assets/images/poster.webp"
           alt="Developer portrait"
           className="w-96 grayscale"
         />

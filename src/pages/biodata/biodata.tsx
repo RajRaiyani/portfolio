@@ -1,66 +1,16 @@
-import Constants from "@/config/constant";
+import Footer from "./footer";
 import { Card, CardContent } from "@/components/ui/card";
-import MyImg from "@/assets/images/poster.webp";
 import { Separator } from "@/components/ui/separator";
-import { Button } from "@/components/ui/button";
 import {
-  CalendarDays,
   GraduationCap,
-  Download,
   Home,
   MapPin,
   Users,
+  BriefcaseBusiness,
 } from "lucide-react";
-import { Instagram, Globe, Twitter } from "lucide-react";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-  DialogFooter,
-} from "@/components/ui/dialog";
-import { useState } from "react";
-
-interface ZoomableImageProps {
-  src: string;
-  alt: string;
-}
-
-export function ZoomableImage({ src, alt }: ZoomableImageProps) {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <Dialog open={isOpen} onOpenChange={setIsOpen}>
-      <DialogTrigger asChild>
-        <div className="relative w-48 h-48 rounded-full overflow-hidden cursor-pointer">
-          <img
-            src={src}
-            alt={alt}
-            className="object-cover transition-transform hover:scale-105"
-          />
-        </div>
-      </DialogTrigger>
-      <DialogContent className="max-w-3xl w-full p-0">
-        <div className="relative w-full h-[80vh] flex justify-center">
-          <img src={src} alt={alt} className="object-contain h-full" />
-        </div>
-        <DialogFooter className="p-2">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => {
-              const link = document.createElement("a");
-              link.href = src;
-              link.download = alt;
-              link.click();
-            }}
-          >
-            <Download />
-          </Button>
-        </DialogFooter>
-      </DialogContent>
-    </Dialog>
-  );
-}
+import SocialMedia from "./media";
+import ZoomableImage from "@/components/shared/image-zoom";
+import Photos from "./photos";
 
 export default function MarriageBiodata() {
   return (
@@ -71,7 +21,11 @@ export default function MarriageBiodata() {
             <CardContent className="p-4 flex flex-col sm:flex-row md:flex-col gap-4 items-center">
               <div className="w-full flex flex-col items-center justify-center">
                 <div className="relative w-48 h-48 rounded-full border overflow-hidden">
-                  <ZoomableImage src={MyImg} alt="Raj Raiyani" />
+                  <ZoomableImage
+                    src="https://public.rajraiyani.dev/biodata-poster.webp"
+                    alt="Raj Raiyani"
+                    className="object-cover transition-transform hover:scale-105"
+                  />
                 </div>
                 <div className="text-center space-y-2">
                   <h2 className="text-xl font-semibold">Raj Raiyani</h2>
@@ -80,10 +34,10 @@ export default function MarriageBiodata() {
                   </p>
                 </div>
               </div>
-              <div className="text-center sm:text-left md:text-center sm:w-2/3">
-                <dl className="grid gap-4 text-sm">
+              <div className="text-center w-full sm:text-left md:text-center sm:w-2/3">
+                <dl className="grid grid-cols-2 md:grid-cols-1 gap-4 text-sm">
                   <div>
-                    <dt className="text-muted-foreground">Full Name</dt>
+                    <dt className="text-muted-foreground">Name</dt>
                     <dd className="font-medium">Raj Raiyani</dd>
                   </div>
                   <div>
@@ -93,6 +47,10 @@ export default function MarriageBiodata() {
                   <div>
                     <dt className="text-muted-foreground">Height</dt>
                     <dd className="font-medium">6 feet</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted-foreground">Weight</dt>
+                    <dd className="font-medium">70 kg</dd>
                   </div>
                 </dl>
               </div>
@@ -139,6 +97,35 @@ export default function MarriageBiodata() {
                   </div>
                 </dl>
               </div>
+              <div>
+                <h3 className="text-lg font-semibold flex items-center gap-2">
+                  <BriefcaseBusiness className="w-5 h-5" />
+                  Work
+                </h3>
+                <Separator className="my-3" />
+                <dl className="space-y-4 text-sm">
+                  <div>
+                    <dt className="text-muted-foreground">Occupation</dt>
+                    <dd className="font-medium">
+                      Co-founder of{" "}
+                      <a
+                        className="text-blue-700 cursor-pointer"
+                        href="https://topgrowth.in/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        Top Growth IT Solution
+                      </a>
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted-foreground">Office address</dt>
+                    <dd className="font-medium">
+                      303 Silver mount, Pedak road, Rajkot, 360003
+                    </dd>
+                  </div>
+                </dl>
+              </div>
 
               <div>
                 <h3 className="text-lg font-semibold flex items-center gap-2">
@@ -170,6 +157,15 @@ export default function MarriageBiodata() {
                       Mother's Occupation
                     </dt>
                     <dd className="font-medium">Housewife</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted-foreground">Land</dt>
+                    <dd className="font-medium">
+                      15 vigha{"  "}
+                      <span className="text-amber-700">
+                        Kasturbadham (Tramba)
+                      </span>
+                    </dd>
                   </div>
                 </dl>
               </div>
@@ -214,62 +210,9 @@ export default function MarriageBiodata() {
           </Card>
         </div>
 
-        <Card>
-          <CardContent className="p-6">
-            <h3 className="text-lg font-semibold mb-4">social handles</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <Button
-                variant="outline"
-                className="flex items-center justify-start gap-2 h-12"
-                asChild
-              >
-                <a
-                  href={Constants.instagram}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Instagram className="h-5 w-5" />
-                  <span>Instagram</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                className="flex items-center justify-start gap-2 h-12"
-                asChild
-              >
-                <a
-                  href={Constants.twitter}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Twitter className="h-5 w-5" />
-                  <span>Twitter</span>
-                </a>
-              </Button>
-              <Button
-                variant="outline"
-                className="flex items-center justify-start gap-2 h-12"
-                asChild
-              >
-                <a
-                  href="https://rajraiyani.dev"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Globe className="h-5 w-5" />
-                  <span>Personal Website</span>
-                </a>
-              </Button>
-            </div>
-          </CardContent>
-        </Card>
-
-        <div className="text-center text-sm text-muted-foreground">
-          <p>
-            Last Updated: <CalendarDays className="inline w-4 h-4 mx-1" />{" "}
-            December 2023
-          </p>
-        </div>
+        <SocialMedia />
+        <Photos />
+        <Footer />
       </div>
     </div>
   );
